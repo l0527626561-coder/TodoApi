@@ -18,7 +18,10 @@ using Microsoft.IdentityModel.JsonWebTokens;
 
 // Main application entry point
 var builder = WebApplication.CreateBuilder(args);
-
+builder.WebHost.ConfigureKestrel(options =>
+{
+    options.ListenAnyIP(8080); // מאזין על כל הכתובות ב-port 8080, HTTP בלבד
+});
 // --- Configu3ration defaults (overridden by appsettings.json or environment) ---
 builder.Configuration["ConnectionStrings:ToDoDB"] ??= "Server=bstb8t7djxp4h4xbbbap-mysql.services.clever-cloud.com;Port=3306;Database=bstb8t7djxp4h4xbbbap;Uid=u59yqsvvgeu51dai;Pwd=cswzmQyF1IBIvQxwlpMR;";
 
