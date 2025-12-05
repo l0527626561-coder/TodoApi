@@ -1,0 +1,13 @@
+# Node.js / React
+ToDoListReact-master/node_modules/
+ToDoListReact-master/build/
+
+# .NET
+TodoApi/bin/
+TodoApi/obj/
+
+# OS / IDE
+*.user
+*.suo
+*.DS_Store
+.vs/
