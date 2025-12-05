@@ -20,7 +20,8 @@ using Microsoft.IdentityModel.JsonWebTokens;
 var builder = WebApplication.CreateBuilder(args);
 
 // --- Configu3ration defaults (overridden by appsettings.json or environment) ---
-builder.Configuration["ConnectionStrings:ToDoDB"] ??= "server=mysql://u59yqsvvgeu51dai:cswzmQyF1IBIvQxwlpMR@bstb8t7djxp4h4xbbbap-mysql.services.clever-cloud.com:3306/bstb8t7djxp4h4xbbbap;user=roou59yqsvvgeu51dait;password=cswzmQyF1IBIvQxwlpMR;database=ToDbstb8t7djxp4h4xbbbapoDB;port=3306;";
+builder.Configuration["ConnectionStrings:ToDoDB"] ??= "Server=bstb8t7djxp4h4xbbbap-mysql.services.clever-cloud.com;Port=3306;Database=bstb8t7djxp4h4xbbbap;Uid=u59yqsvvgeu51dai;Pwd=cswzmQyF1IBIvQxwlpMR;";
+
 builder.Configuration["Jwt:Key"] ??= "DevSecretKey_DoNotUseInProd_ReplaceThis";
 builder.Configuration["Jwt:Issuer"] ??= "TodoApi";
 builder.Configuration["Jwt:Audience"] ??= "TodoClient";
