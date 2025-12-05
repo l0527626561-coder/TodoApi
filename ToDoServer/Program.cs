@@ -20,7 +20,7 @@ using Microsoft.IdentityModel.JsonWebTokens;
 var builder = WebApplication.CreateBuilder(args);
 
 // --- Configu3ration defaults (overridden by appsettings.json or environment) ---
-builder.Configuration["ConnectionStrings:ToDoDB"] ??= "server=localhost;user=root;password=LEA@6561;database=ToDoDB";
+var connectionString = Environment.GetEnvironmentVariable("ToDoDB");
 builder.Configuration["Jwt:Key"] ??= "DevSecretKey_DoNotUseInProd_ReplaceThis";
 builder.Configuration["Jwt:Issuer"] ??= "TodoApi";
 builder.Configuration["Jwt:Audience"] ??= "TodoClient";
